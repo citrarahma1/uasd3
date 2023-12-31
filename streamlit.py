@@ -1,5 +1,6 @@
 import pickle
 import streamlit as st
+import matplotlib.pyplot as plt
 from sklearn.tree import plot_tree
 
 model = pickle.load(open('brain_stroke.sav', 'rb'))
