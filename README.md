@@ -4,10 +4,10 @@
 ### Kelas : Teknik Informatika Pagi B
 
 ## Domain Proyek
-Proyek yang saya buat yaitu pengkalkulasian resiko seseorang terkena stroke. Menurut peneliti, Faktor risiko utama terjadinya stroke adalah tekanan darah tinggi. Maka dari itu, saya selaku pembuat mencoba membuat pengkalkulasian apakah seseorang dapat terkena stroke atau tidak dari beberapa atribut yang di dapatkan dari dataset. Agar seseorang dapat lebih waspada dan terhindar dari penyakit stroke.
+Proyek yang saya buat yaitu pengkalkulasian resiko seseorang terkena stroke. Menurut peneliti, Faktor risiko utama terjadinya stroke adalah tekanan darah tinggi. Maka dari itu, saya selaku pembuat mencoba membuat pengkalkulasian apakah seseorang dapat terkena resiko stroke atau tidak dari beberapa atribut yang di dapatkan dari dataset. Agar seseorang dapat lebih waspada dan terhindar dari penyakit stroke.
 
 ## Business Understanding
-Proyek ini memudahkan serta menghemat waktu kita dalam mengecek apakah kita dapat terkena penyakit stroke atau tidak,dengan cukup mengisi pertanyaan yang ada tanpa harus pergi ke rumahsakit terlebih dulu.
+Proyek ini memudahkan serta menghemat waktu kita dalam mengecek apakah kita dapat terkena resiko penyakit stroke atau tidak,dengan cukup mengisi pertanyaan yang ada tanpa harus pergi ke rumahsakit terlebih dulu.
 
 Bagian laporan ini mencakup:
 
@@ -18,7 +18,7 @@ Bagian laporan ini mencakup:
 - Untuk mengetahui apakah kita dapat terkena penyakit stroke atau tidak.
 
     ### Solution statements
-    - Dikembangkannya Kalkulasi terkena stroke berbasis web agar dapat mengetahui dengan mudah apakah kita dapat terkena penyakit stroke atau tidak dengan parameter yang telah ditentukan dan dihitung menggunakan algoritma decision tree.
+    - Dikembangkannya Kalkulasi resiko terkena stroke berbasis web agar dapat mengetahui dengan mudah apakah kita dapat terkena penyakit stroke atau tidak dengan parameter yang telah ditentukan dan dihitung menggunakan algoritma decision tree.
 
 ## Data Understanding
 Dataset yang digunakan adalah dataset yang diambil dari kaggle, dimana isi dari Brain Stroke Dataset ini yaitu hasil perkiraan seseorang dapat terkena penyakit stroke dan diteliti berdasarkan 10 atribut.
@@ -167,7 +167,7 @@ plt.show()
 ![image](https://github.com/citrarahma1/uasd3/assets/149367504/c6f6a3f9-82a9-4b86-a914-c7d146f159f6)
 
 ## Deployment
-[Kalkulasi Terkena Stroke](https://uasdecisiontree.streamlit.app/).
+[Kalkulasi Resiko Terkena Stroke](https://uasdecisiontree.streamlit.app/).
 ![image](https://github.com/citrarahma1/uasd3/assets/149367504/bf983388-fd78-4d81-937b-60e409b063d8)
 
 
