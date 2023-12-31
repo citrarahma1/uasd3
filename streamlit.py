@@ -1,6 +1,6 @@
 import pickle
 import streamlit as st
-from dtreeviz.trees import dtreeviz
+from sklearn.tree import plot_tree
 
 model = pickle.load(open('brain_stroke.sav', 'rb'))
 
@@ -118,6 +118,7 @@ if st.button('Tingkat Resiko'):
     st.success(resiko)
 
 if st.button('Visualize Decision Tree'):
-    # Visualize the Decision Tree using dtreeviz
-    viz = dtreeviz(model, X_train, y_train, target_name='target', feature_names=['gender', 'age', 'hypertension', 'heart_disease', 'ever_married', 'avg_glucose_level', 'bmi', 'stroke', 'work_type_Govt_job', 'work_type_Private', 'work_type_Self_employed', 'work_type_children', 'Residence_type_Rural', 'Residence_type_Urban', 'smoking_status_Unknown', 'smoking_status_formerly_smoked', 'smoking_status_never_smoked', 'smoking_status_smokes'])
-    st.pyplot(viz.to_image())
+    # Visualize the Decision Tree using matplotlib
+    fig, ax = plt.subplots(figsize=(12, 8))
+    plot_tree(model, filled=True, feature_names=['gender', 'age', 'hypertension', 'heart_disease', 'ever_married', 'avg_glucose_level', 'bmi', 'stroke', 'work_type_Govt_job', 'work_type_Private', 'work_type_Self_employed', 'work_type_children', 'Residence_type_Rural', 'Residence_type_Urban', 'smoking_status_Unknown', 'smoking_status_formerly_smoked', 'smoking_status_never_smoked', 'smoking_status_smokes'], ax=ax, class_names=['No Stroke', 'Stroke'])
+    st.pyplot(fig)
