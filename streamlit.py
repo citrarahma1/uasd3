@@ -1,7 +1,6 @@
 import pickle
 import streamlit as st
-import graphviz
-from sklearn.tree import export_graphviz
+from dtreeviz.trees import dtreeviz
 
 model = pickle.load(open('brain_stroke.sav', 'rb'))
 
@@ -118,17 +117,7 @@ if st.button('Tingkat Resiko'):
 
     st.success(resiko)
 
-    graphviz_path = '/home/adminuser/venv/lib/python3.9/site-packages/graphviz/bin/dot'
-
-    dot_data = export_graphviz(
-        model,
-        out_file=None,
-        feature_names=['gender', 'age', 'hypertension', 'heart_disease', 'ever_married', 'avg_glucose_level', 'bmi', 'work_type_Govt_job', 'work_type_Private', 'work_type_Self_employed', 'work_type_children', 'Residence_type_Rural', 'Residence_type_Urban', 'smoking_status_Unknown', 'smoking_status_formerly_smoked', 'smoking_status_never_smoked', 'smoking_status_smokes'],
-        filled=True,
-        rounded=True
-    )
-
-    graph = graphviz.Source(dot_data)
-    graph.render(filename='tree', format='png', cleanup=True)
-
-    st.image('tree.png')
+if st.button('Visualize Decision Tree'):
+    # Visualize the Decision Tree using dtreeviz
+    viz = dtreeviz(model, X_train, y_train, target_name='target', feature_names=['gender', 'age', 'hypertension', 'heart_disease', 'ever_married', 'avg_glucose_level', 'bmi', 'stroke', 'work_type_Govt_job', 'work_type_Private', 'work_type_Self_employed', 'work_type_children', 'Residence_type_Rural', 'Residence_type_Urban', 'smoking_status_Unknown', 'smoking_status_formerly_smoked', 'smoking_status_never_smoked', 'smoking_status_smokes'])
+    st.pyplot(viz.to_image())
