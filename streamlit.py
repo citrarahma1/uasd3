@@ -118,6 +118,8 @@ if st.button('Tingkat Resiko'):
 
     st.success(resiko)
 
+    graphviz_path = '/home/adminuser/venv/lib/python3.9/site-packages/graphviz/'
+
     dot_data = export_graphviz(
         model,
         out_file=None,
