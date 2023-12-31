@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning
 ### Nama : Citra Rahmawati
-### Nim :211351037
+### Nim : 211351037
 ### Kelas : Teknik Informatika Pagi B
 
 ## Domain Proyek
