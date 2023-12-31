@@ -100,38 +100,74 @@ Untuk menampilkan berapa kolom yang ada, masukan perintah :
 df.shape
 ```
 
+Untuk pengelompokan data :
+```bash
+df[df['stroke']==1].groupby(df['gender']).count()
+```
 
+Untuk mengubah variabel kategorikal menjadi bentuk biner :
+```bash
+df['ever_married'] = [ 1 if i !='Yes' else 0 for i in df['ever_married'] ]
+df['gender'] = [1 if i != 'Female' else 0 for i in df['gender']]
+```
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Untuk split data. dan membuat kolom baru :
+```bash
+df=pd.get_dummies(df,columns=['work_type','Residence_type','smoking_status'])
+```
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Untuk menentukan x (feature) dan y (label) :
+```bash
+X=df.drop(['stroke'],axis=1)
+y=df['stroke']
+```
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+Untuk memisahkan data training dan data testing dengan memasukan perintah :
+```bash
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=0)
+```
+
+Lalu masukan data training dan testing ke dalam model decision tree dengan perintah :
+```bash
+dtc = DecisionTreeClassifier(
+    ccp_alpha=0.0, class_weight=None, criterion='entropy',
+    max_depth=4, max_features=None, max_leaf_nodes=None,
+    min_impurity_decrease=0.0, min_samples_leaf=1,
+    min_samples_split=2, min_weight_fraction_leaf=0,
+    random_state=42, splitter='best'
+)
+
+model = dtc.fit(X_train, y_train)
+
+y_pred = dtc.predict(X_test)
+
+dtc_acc = accuracy_score(y_test, dtc.predict(X_test))
+```
+
+Untuk mengecek akurasinya masukan perintah :
+```bash
+print(f"akurasi data training = {accuracy_score(y_train, dtc.predict(X_train))}")
+print(f"akurasi data testing = {dtc_acc} \n")
+```
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
-
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Metrik evaluasi yang digunakan yaitu confusion matrik dengan memasukan perintah :
+```bash
+confusion_mat = confusion_matrix(y_test, y_pred)
+```
+```bash
+plt.figure(figsize=(6, 6))
+sns.heatmap(confusion_mat, annot=True, fmt="d", cmap="Reds", xticklabels=dtc.classes_, yticklabels=dtc.classes_)
+plt.title('Confusion Matrix')
+plt.xlabel('Pred')
+plt.ylabel('Actual')
+plt.show()
+```
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/c6f6a3f9-82a9-4b86-a914-c7d146f159f6)
 
 ## Deployment
-pada bagian ini anda memberikan link project yang diupload melalui streamlit share. boleh ditambahkan screen shoot halaman webnya.
+[Kalkulasi Terkena Stroke](https://uasdecisiontree.streamlit.app/).
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/bf983388-fd78-4d81-937b-60e409b063d8)
 
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
 
