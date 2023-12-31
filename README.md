@@ -23,7 +23,7 @@ Bagian laporan ini mencakup:
 ## Data Understanding
 Dataset yang digunakan adalah dataset yang diambil dari kaggle, dimana isi dari Brain Stroke Dataset ini yaitu hasil perkiraan seseorang dapat terkena penyakit stroke dan diteliti berdasarkan 10 atribut.
 
-Contoh: [Brain Stroke Dataset](https://www.kaggle.com/datasets/jillanisofttech/brain-stroke-dataset/data).
+[Brain Stroke Dataset](https://www.kaggle.com/datasets/jillanisofttech/brain-stroke-dataset/data).
 
 ### Variabel-variabel pada Brain Stroke Dataset adalah sebagai berikut:
 - gender: Merupakan jenis kelamin.
@@ -38,7 +38,69 @@ Contoh: [Brain Stroke Dataset](https://www.kaggle.com/datasets/jillanisofttech/b
 - smoking_status: Merupakan sebuah pertanyaan apakah seseorang adalah perokok.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Pertama import dulu library yang di butuh dengan memasukan perintah :
+```bash
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pickle
+```
+```bash
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn import tree
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+```
+
+Kemudian agar dataset di dalam kaggle langsung bisa terhubung ke collab maka harus membuat token terlebih dahulu di akun kaggle dengan memasukan perintah :
+```bash
+from google.colab import files
+files.upload()
+```
+
+Berikutnya yaitu membuat direktori dengan memasukan perintah :
+```bash
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+!ls ~/.kaggle
+```
+
+Setelah itu kita panggil url dataset yang ada di website kaggle untuk didownload langsung ke google colab.
+```bash
+!kaggle datasets download -d jillanisofttech/brain-stroke-dataset
+```
+
+Selanjutnya kita ekstrak dataset yang sudah didownload dengan perintah :
+```bash
+!mkdir brain-stroke-dataset
+!unzip brain-stroke-dataset.zip -d brain-stroke-dataset
+!ls brain-stroke-dataset
+```
+
+Jika berhasil diekstrak, maka kita langsung dapat membuka dataset tersebut dengan perintah :
+```bash
+df = pd.read_csv('/content/brain-stroke-dataset/brain_stroke.csv')
+```
+
+Untuk menampilkan isi dari dataset dengan memasukan perintah :
+```bash
+df.head()
+```
+
+Untuk menampilkan jumlah data dan kolom yang ada di dataset, masukan perintah :
+```bash
+df.info()
+```
+
+Untuk menampilkan berapa kolom yang ada, masukan perintah :
+```bash
+df.shape
+```
+
+
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
