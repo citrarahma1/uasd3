@@ -1,61 +1,41 @@
 # Laporan Proyek Machine Learning
-### Nama :
-### Nim :
-### Kelas :
+### Nama : Citra Rahmawati
+### Nim :211351037
+### Kelas : Teknik Informatika Pagi B
 
 ## Domain Proyek
-
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-  
-  Format Referensi: [Judul Referensi](https://scholar.google.com/) 
+Proyek yang saya buat yaitu pengkalkulasian resiko seseorang terkena stroke. Menurut peneliti, Faktor risiko utama terjadinya stroke adalah tekanan darah tinggi. Maka dari itu, saya selaku pembuat mencoba membuat pengkalkulasian apakah seseorang dapat terkena stroke atau tidak dari beberapa atribut yang di dapatkan dari dataset. Agar seseorang dapat lebih waspada dan terhindar dari penyakit stroke.
 
 ## Business Understanding
-
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
+Proyek ini memudahkan serta menghemat waktu kita dalam mengecek apakah kita dapat terkena penyakit stroke atau tidak,dengan cukup mengisi pertanyaan yang ada tanpa harus pergi ke rumahsakit terlebih dulu.
 
 Bagian laporan ini mencakup:
 
 ### Problem Statements
-
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Ketidaktahuan seseorang terhadap dirinya yang dapat terkena penyakit stroke atau tidak.
 
 ### Goals
-
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+- Untuk mengetahui apakah kita dapat terkena penyakit stroke atau tidak.
 
     ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+    - Dikembangkannya Kalkulasi terkena stroke berbasis web agar dapat mengetahui dengan mudah apakah kita dapat terkena penyakit stroke atau tidak dengan parameter yang telah ditentukan dan dihitung menggunakan algoritma decision tree.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. dataset wajib menggunakan [kaggle](https://www.kaggle.com/) dan **atribut yang digunakan minimal 8 atribut**. Sertakan juga sumber atau tautan untuk mengunduh dataset.<br> 
+Dataset yang digunakan adalah dataset yang diambil dari kaggle, dimana isi dari Brain Stroke Dataset ini yaitu hasil perkiraan seseorang dapat terkena penyakit stroke dan diteliti berdasarkan 10 atribut.
 
-Contoh: [Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction).
+Contoh: [Brain Stroke Dataset](https://www.kaggle.com/datasets/jillanisofttech/brain-stroke-dataset/data).
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-### Variabel-variabel pada Heart Failure Prediction Dataset adalah sebagai berikut:
-- Age : merupakan umur pasien dalam satuan tahun.
-- Sex : merupakan jenis kelamin pasien meliputi [M: Male, F: Female].
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+### Variabel-variabel pada Brain Stroke Dataset adalah sebagai berikut:
+- gender: Merupakan jenis kelamin.
+- age: Merupakan umur seseorang.
+- hypertension: Merupakan sebuah pertanyaan apakah seseorang memiliki riwayat penyakit darah tinggi.
+- heart disease: Merupakan sebuah pertanyaan apakah seseorang memiliki riwayat penyakit jantung.
+- Ever-married: Merupakan sebuah pertanyaan apakah seseorang pernah menikah.
+- work type: Merupakan jenis pekerjaan.
+- Residencetype: Merupakan tipe tempat tinggal.
+- avg glucose level: Merupakan rata-rata kadar glukosa.
+- BMI: Merupakan indeks masa tubuh.
+- smoking_status: Merupakan sebuah pertanyaan apakah seseorang adalah perokok.
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
