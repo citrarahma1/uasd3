@@ -150,6 +150,75 @@ Untuk mengecek akurasinya masukan perintah :
 print(f"akurasi data training = {accuracy_score(y_train, dtc.predict(X_train))}")
 print(f"akurasi data testing = {dtc_acc} \n")
 ```
+## EDA
+untuk menampilkan Distribusi Kasus Stroke Berdasarkan Gender
+```bash
+plt.subplot(1,2,1)
+
+stroke_cases = df[df['stroke'] == 1]
+
+
+stroke_counts_by_gender = stroke_cases.groupby('gender').size()
+
+
+plt.bar(stroke_counts_by_gender.index, stroke_counts_by_gender.values)
+
+
+plt.xlabel('Gender')
+plt.ylabel('Number of Stroke Cases')
+plt.title('Distribution of Stroke Cases by Gender')
+
+
+plt.show()
+```
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/2c6f3d8d-b124-4038-a4d5-dc299cbc9b7d)
+
+untuk menampilkan Sebaran Kasus Stroke menurut ever_married
+```bash
+plt.subplot(1,2,1)
+
+stroke_cases = df[df['stroke'] == 1]
+
+
+stroke_counts_by_ever_married = stroke_cases.groupby('ever_married').size()
+
+
+plt.bar(stroke_counts_by_ever_married.index, stroke_counts_by_ever_married.values)
+
+
+plt.xlabel('ever_married')
+plt.ylabel('Number of Stroke Cases')
+plt.title('Distribution of Stroke Cases by ever_married')
+
+
+plt.show()
+```
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/cfa82b0a-4fef-4a2d-a2a3-5a32f2f975a8)
+
+
+untuk menampilkan Distribusi Kasus Stroke berdasarkan work_type
+```bash
+
+plt.subplot(1,2,1)
+
+stroke_cases = df[df['stroke'] == 1]
+
+
+stroke_counts_by_work_type = stroke_cases.groupby('work_type').size()
+
+
+plt.bar(stroke_counts_by_work_type.index, stroke_counts_by_work_type.values)
+
+
+plt.xlabel('work_type')
+plt.ylabel('Number of Stroke Cases')
+plt.title('Distribution of Stroke Cases by work_type')
+
+plt.xticks(rotation=45)
+plt.show()
+```
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/75799bd7-6c00-44b8-b1df-3192139bc2db)
+
 
 ## Evaluation
 Metrik evaluasi yang digunakan yaitu confusion matrik dengan memasukan perintah :
