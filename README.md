@@ -219,7 +219,31 @@ plt.show()
 ```
 ![image](https://github.com/citrarahma1/uasd3/assets/149367504/75799bd7-6c00-44b8-b1df-3192139bc2db)
 
+untuk menampilkan Distribusi Kasus Stroke berdasarkan age
+```bash
+plt.hist(df["age"],bins=18, rwidth=0.8)
+plt.xlabel('age')
+plt.ylabel('Count')
+plt.show()
+```
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/16ab88d9-d41d-457d-843e-2558add4c994)
 
+untuk menampilkan Berdasarkan Pengalaman Merokok
+```bash
+plt.rcParams.update({'font.size': 12})
+ax=df['smoking_status'].value_counts().plot.pie(autopct='%1.2f%%',shadow=True)
+ax.set_title(label = "Based on Smoking Experienced", fontsize = 20);
+plt.axis('off')
+```
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/2aa2df16-6234-4913-9c31-e779c7c27e94)
+
+untuk menampilkan Usia yang lebih besar kemungkinannya menderita hipertensi
+```bash
+plt.figure(figsize=(7,5))
+sns.histplot(data= df,x='age', hue = 'hypertension',multiple = 'stack',palette = 'pastel')
+plt.title("Age that more likely to have hypertension")
+plt.xlabel("Age");
+```
 ## Evaluation
 Metrik evaluasi yang digunakan yaitu confusion matrik dengan memasukan perintah :
 ```bash
