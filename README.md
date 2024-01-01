@@ -150,6 +150,10 @@ Untuk mengecek akurasinya masukan perintah :
 print(f"akurasi data training = {accuracy_score(y_train, dtc.predict(X_train))}")
 print(f"akurasi data testing = {dtc_acc} \n")
 ```
+```bash
+out : akurasi data training = 0.9480780263912794
+akurasi data testing = 0.9565217391304348 
+```
 ## EDA
 untuk menampilkan Distribusi Kasus Stroke Berdasarkan Gender
 ```bash
