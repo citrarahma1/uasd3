@@ -166,6 +166,21 @@ plt.show()
 ```
 ![image](https://github.com/citrarahma1/uasd3/assets/149367504/c6f6a3f9-82a9-4b86-a914-c7d146f159f6)
 
+## Visualisasi data
+untuk memvisualisasikannya :
+```bash
+ind_col = [col for col in df.columns if col!= 'stroke']
+dep_col = 'stroke'
+```
+```bash
+fig = plt.figure(figsize=(20,20))
+_ = tree.plot_tree(model,
+                   feature_names=ind_col,
+                   class_names=dep_col,
+                   filled=True)
+```
+![image](https://github.com/citrarahma1/uasd3/assets/149367504/8c964908-871d-4cd7-94f1-626c7d195f2b)
+
 ## Deployment
 [Kalkulasi Resiko Terkena Stroke](https://uasdecisiontree.streamlit.app/).
 ![image](https://github.com/citrarahma1/uasd3/assets/149367504/bf983388-fd78-4d81-937b-60e409b063d8)
